@@ -21,7 +21,7 @@ function getEleve($idEleve){
 }
 function getAbsence($idEleve){
 	$bdd = getBdd();
-	$absences = $bdd->prepare('select nbr from absence where ID_eleve = ?');
+	$absences = $bdd->prepare('select ID_abs , ID_eleve , nbr , matiere from absence where ID_eleve = ?');
 	$absences->execute(array($idEleve));
 			return $absences;
 	}

@@ -9,9 +9,14 @@
 		<li><?= $eleve['Ville'] ?></li>
 		<li><?= $eleve['email'] ?></li>
 	</ul>
-	<?php if($eleve['etat'] == 1){?>
-		<a href="modifier.php?id=<?= $eleve['ID_eleve'] ?>">modifier les donnees</a>
-<?php } ?>
+<?php if($eleve['etat'] == 1){?>
+		<div><a href="modifier.php?id=<?= $eleve['ID_eleve'] ?>">modifier les donnees</a>
+<a href="index.php">annuler</a><?php } ?>
+		</div>
+		<div align="center"><img src="<?= $eleve['Photo'] ?>"></div>
+		<a href="absence.php?id=<?= $eleve['ID_eleve'] ?>&etat=<?= $eleve['etat']?>">detai absence</a>
+		</div>
+
 <?php $contenu = ob_get_clean();
 require_once 'Vue/gabarit.php';
 ?>
