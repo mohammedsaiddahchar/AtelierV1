@@ -5,6 +5,6 @@ $bdd = getBdd();
        return $eleves;
 }
 function getBdd(){
-	$bdd = new PDO('mysql:host=localhost;dbname=ensat;charset=utf8', 'root', '');
-	return $Bdd;
+	$bdd = new PDO('mysql:host=localhost;dbname=ensat;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+	return $bdd;
 }
