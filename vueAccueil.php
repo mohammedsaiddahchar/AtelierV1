@@ -1,26 +1,5 @@
-<!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="style.css" />
-        <title>Gestion des élèves</title>
-    </head>
-<body>
-          	
-<div id="global">
-<h1>Liste des élèves</h1>
-<table>
-	<tr>
-		<td>CNE</td>
-		<td>Nom</td>
-		<td>Prénom</td>
-		<td>Adresse</td>
-        <td>Ville</td>
-        <td>Email</td>
-        <td>Photo</td>
-        <td>etat</td>
-	</tr>
-<?php
+<?php $titre = 'Gestion des élèves';
+ob_start();
 foreach ($eleves as $eleve) :
 	$et="";
 	$lien="";
@@ -45,9 +24,7 @@ foreach ($eleves as $eleve) :
         <td><?=  $eleve["Photo"]; ?></td>
 		<td><a href="<?=  $lien; ?>"><?=  $et; ?></a></td>
 	</tr>
-<?php endforeach; ?>
-	
-</table>	
-</div>
-</body>
-</html>
+<?php endforeach;
+$contenu = ob_get_clean();
+require_once 'gabarit.php';
+?>
