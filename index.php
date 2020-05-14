@@ -4,5 +4,6 @@
        	$eleves=getEleves();
        require_once 'vueAccueil.php';
        } catch (Exception $e) {  
-       	echo ' <html><body>Erreur!!'.$e->getMessage().'</body></html>';
+       	$msgErreur = $e->getMessage();
+       	require_once 'vueErreur.php';
        }
