@@ -1,9 +1,22 @@
 <?php
-       require_once 'Modele.php';
+       require_once 'Controleur.php';
        try {
-       	$eleves=getEleves();
-       require_once 'vueAccueil.php';
+       	if(isset($_GET['action'])){
+       		if($_GET['action'] == 'eleve'){
+       			if(isset($_GET['id'])){
+       				$idEleve = intval($_GET['id']);
+       				if($idEleve != 0)
+       					eleve($idEleve);
+       				else
+       					throw new Exception("Identifiant d'eleve non valide");			
+       			}
+       			else
+       					throw new Exception("Identifiant d'eleve non défini");
+       		}
+       		else
+       					throw new Exception("Action non valide");
+       	}
+       	else{accueil();}
        } catch (Exception $e) {  
-       	$msgErreur = $e->getMessage();
-       	require_once 'vueErreur.php';
+       	erreur($e->getMessage());
        }

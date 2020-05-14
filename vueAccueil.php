@@ -15,7 +15,7 @@ foreach ($eleves as $eleve) :
 	}
 	?>
 		<tr>
-		<td><?=  $eleve["CNE"]; ?></td>
+		<td><a href="<?=  "index.php?action=eleve&id=".$eleve['ID'] ?>"><?=  $eleve["CNE"]; ?></a></td>
 		<td><?=  $eleve["Nom"]; ?></td>
 		<td><?=  $eleve["Prenom"]; ?></td>
         <td><?=  $eleve["Adresse"]; ?></td>
