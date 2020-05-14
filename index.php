@@ -24,7 +24,7 @@
         <td>etat</td>
 	</tr>
 <?php
-foreach ($eleves as $eleve) {
+foreach ($eleves as $eleve) :
 	$et="";
 	$lien="";
 	if($eleve["etat"]=="true")
@@ -39,19 +39,17 @@ foreach ($eleves as $eleve) {
 	}
 	?>
 		<tr>
-		<td><?php echo $eleve["CNE"]; ?></td>
-		<td><?php echo $eleve["Nom"]; ?></td>
-		<td><?php echo $eleve["Prenom"]; ?></td>
-        <td><?php echo $eleve["Adresse"]; ?></td>
-        <td><?php echo $eleve["Ville"]; ?></td>
-        <td><?php echo $eleve["email"]; ?></td>
-        <td><?php echo $eleve["Photo"]; ?></td>
-		<td><a href="<?php echo $lien; ?>"><?php echo $et; ?></a></td>
+		<td><?=  $eleve["CNE"]; ?></td>
+		<td><?=  $eleve["Nom"]; ?></td>
+		<td><?=  $eleve["Prenom"]; ?></td>
+        <td><?=  $eleve["Adresse"]; ?></td>
+        <td><?=  $eleve["Ville"]; ?></td>
+        <td><?=  $eleve["email"]; ?></td>
+        <td><?=  $eleve["Photo"]; ?></td>
+		<td><a href="<?=  $lien; ?>"><?=  $et; ?></a></td>
 	</tr>
-	<?php
+<?php endforeach; ?>
 	
-}
-	?>
 </table>	
 </div>
 </body>
